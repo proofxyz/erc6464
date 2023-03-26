@@ -3,9 +3,9 @@
 pragma solidity ^0.8.0;
 import "forge-std/Test.sol";
 import {ERC6464} from "../src/ERC6464.sol";
-import {ERC721} from "../src/utils/ERC721.sol";
+import {ERC721} from "openzeppelin-contracts/token/ERC721/ERC721.sol";
 import {IERC6464Events, IERC6464, IERC6464AnyApproval} from "../src/interfaces/IERC6464.sol";
-import {IERC721} from "../src/interfaces/IERC721.sol";
+import {IERC721} from "openzeppelin-contracts/token/ERC721/IERC721.sol";
 
 interface ITestableReferenceERC6464 is IERC6464, IERC6464AnyApproval {
     function mint(address _receiver) external;

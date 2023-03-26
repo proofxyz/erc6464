@@ -3,7 +3,7 @@
 pragma solidity ^0.8.0;
 
 // IERC721 is renamed to ERC721 for compatibility with the original EIP defition.
-import {IERC721 as ERC721} from "./IERC721.sol";
+import {IERC721 as ERC721} from "openzeppelin-contracts/token/ERC721/IERC721.sol";
 
 /**
  * @notice Extends ERC-721 to include per-token approval for multiple operators.

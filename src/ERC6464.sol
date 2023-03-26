@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import {IERC6464} from "./interfaces/IERC6464.sol";
 import {IERC6464AnyApproval} from "./interfaces/IERC6464.sol";
 import {IERC6464Events} from "./interfaces/IERC6464.sol";
-import {ERC721} from "./utils/ERC721.sol";
+import {ERC721} from "openzeppelin-contracts/token/ERC721/ERC721.sol";
 
 error NotOwner(address sender, uint256 tokenId);
 error NotAuthorized(address operator, uint256 tokenId);
