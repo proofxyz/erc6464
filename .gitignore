@@ -1,0 +1,16 @@
+# Compiler files
+cache/
+out/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*/31337/
+/broadcast/**/dry-run/
+
+# Env file
+.env
+
+# Editor files
+.gitpod.yml
+.DS_Store
+/.idea
