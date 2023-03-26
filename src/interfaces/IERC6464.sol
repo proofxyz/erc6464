@@ -21,22 +21,14 @@ interface IERC6464 is ERC721 {
      * @dev MUST emit `ApprovalFor(operator, tokenId, approved)`.
      * @dev MUST NOT have an effect on any standard ERC721 approval setters / getters.
      */
-    function setExplicitApproval(
-        address operator,
-        uint256 tokenId,
-        bool approved
-    ) external;
+    function setExplicitApproval(address operator, uint256 tokenId, bool approved) external;
 
     /**
      * @notice Approves the operator to manage the token(s) on behalf of their owner.
      * @dev MUST be equivalent to calling `setExplicitApprovalFor(operator, tokenId, approved)` for each `tokenId` in
      * the array.
      */
-    function setExplicitApproval(
-        address operator,
-        uint256[] memory tokenIds,
-        bool approved
-    ) external;
+    function setExplicitApproval(address operator, uint256[] memory tokenIds, bool approved) external;
 
     /**
      * @notice Revokes all explicit approvals granted by `msg.sender`.
@@ -54,10 +46,7 @@ interface IERC6464 is ERC721 {
     /**
      * @notice Query whether an address is an approved operator for a token.
      */
-    function isExplicitlyApprovedFor(address operator, uint256 tokenId)
-        external
-        view
-        returns (bool);
+    function isExplicitlyApprovedFor(address operator, uint256 tokenId) external view returns (bool);
 }
 
 interface IERC6464AnyApproval is ERC721 {
@@ -69,21 +58,14 @@ interface IERC6464AnyApproval is ERC721 {
      * @dev The criteria MUST be extended if other mechanism(s) for approving operators are introduced. The criteria
      * MUST include all approval approaches.
      */
-    function isApprovedFor(address operator, uint256 tokenId)
-        external
-        view
-        returns (bool);
+    function isApprovedFor(address operator, uint256 tokenId) external view returns (bool);
 }
 
 interface IERC6464Events {
     /**
      * @notice Emitted when approval is explicitly granted or revoked for a token.
      */
-    event ExplicitApprovalFor(
-        address indexed operator,
-        uint256 indexed tokenId,
-        bool approved
-    );
+    event ExplicitApprovalFor(address indexed operator, uint256 indexed tokenId, bool approved);
 
     /**
      * @notice Emitted when all explicit approvals, as granted by either `setExplicitApprovalFor()` function, are
@@ -98,8 +80,5 @@ interface IERC6464Events {
      * @param owner MUST be `ownerOf(tokenId)` as per ERC721; in the case of revocation due to transfer, this MUST be
      * the `from` address expected to be emitted in the respective `ERC721.Transfer()` event.
      */
-    event AllExplicitApprovalsRevoked(
-        address indexed owner,
-        uint256 indexed tokenId
-    );
+    event AllExplicitApprovalsRevoked(address indexed owner, uint256 indexed tokenId);
 }
